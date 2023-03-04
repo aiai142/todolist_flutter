@@ -1,0 +1,67 @@
+import 'package:flutter/material.dart';
+//import 'package:intl/intl.dart';
+// void main() {
+  //Khoi tao doi tuong
+  // var myCar = Car(
+  //   name:'BMW',
+  //   yearOfProduction: 20,
+  //   );
+  //   myCar.doSomething();
+  //   myCar.sayHello('Ai');
+  //   // myCar.handleEvent = () {
+  //   //   print("handle");
+  //   // };
+  //LIST OF CAR
+  // List<Car> cars = <Car>[
+  //   Car(name: "ABCDER", yearOfProduction: 202336),
+  // Car(name: "ABCD123457", yearOfProduction: 20231),
+  // Car(name: "ABCE", yearOfProduction: 20231)
+  // ]; //ds rong
+  // cars.forEach( (car) {
+  //   print(car);
+  // });
+  // print("haha");
+  // sắp xếp tăng dần
+ // cars.sort((car1, car2) => car1.yearOfProduction - car2.yearOfProduction);
+  // sắp xếp giảm dần
+  //cars.sort((car1, car2) => car2.yearOfProduction - car1.yearOfProduction);
+  //sort by name
+  //cars.sort((car1, car2) => car1.name.compareTo(car2.name));
+  // update an item in list
+  //cars[0].yearOfProduction = 2022;
+  // add more item
+  // cars.add(Car(name: 'DiuAI',yearOfProduction: 21));
+  //filter ? Ex: get only car in 2022;
+  //var filterCar =cars.where((car) => car.yearOfProduction == 20231 && car.name.contains("123")).toList();
+  //filter name ko phân biejt hoa thường
+  //var filterCar =cars.where((car) => car.yearOfProduction == 20231 && car.name.toUpperCase().contains("123")).toList();
+  // delete an item = using filter
+  // cars = cars.where((car) => car.name != "DiuAI").toList();
+  // Get a list of names = using map
+  // List<String> names = cars.map((car) =>car.name).toList();
+  // In ra cửa sổ console
+  // names.forEach((name){
+  //   print('name: ${name}');
+  // });
+  // -------------------- TRY WITH FINAL AND CONST---------------------
+  // final int x = 10;
+  // runApp(
+  //   Center(child: Text(
+  //     //'${myCar.toString()}',
+  //     //cars.toString(),
+  //     //filterCar.toString(),
+  //     names.toString(),
+  //     style: TextStyle(fontSize: 30),
+  //     textDirection: TextDirection.ltr,
+  //   ))
+  // );
+  // runApp(
+  //   Center(child: Text(
+  //     "Hello, this lesson is about widgets",
+  //     style: TextStyle(fontSize: 30),
+  //     textDirection: TextDirection.ltr,
+  //   ))
+  // );
+  //runApp(MyApp()); // Gửi params xuống thẻ MyApp qua hàm khởi tạo
+//    runApp(MyApp(name: 'Diu Ai', age: 21));
+// }

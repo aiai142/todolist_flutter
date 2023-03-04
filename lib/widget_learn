@@ -1,0 +1,124 @@
+import 'package:flutter/material.dart';
+// //----Tự định nghĩa widget
+// class MyApp extends StatelessWidget {
+//   //define a constructor here
+//   String name;
+//   int age;
+//   MyApp({required this.name, required this.age});
+//   @override
+//   Widget build(BuildContext context) {
+//   //   return Center(child: Text(
+//   //     "name: ${this.name}, age: ${this.age}",
+//   //     style: TextStyle(fontSize: 30),
+//   //     textDirection: TextDirection.ltr,
+//   //   ));
+//   // }
+//   return MaterialApp(
+//     title: 'This is my first App',
+//     home: Scaffold(
+//       body: Center(child: Text(
+//           "name: ${this.name}, age: ${this.age}",
+//       style: TextStyle(fontSize: 30,
+//                         fontWeight: FontWeight.bold,
+//                         color: Colors.red),
+//       textDirection: TextDirection.ltr,
+//       ),),
+//     )
+//   );
+// }
+// }
+
+class MyApp extends StatefulWidget {
+  // String name;
+  // int age;
+  //MyApp({required this.name, required this.age});
+  @override
+  State<StatefulWidget> createState() {
+    return _MyAppState(); 
+    }
+}
+
+class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
+  String _email = ''; // This is state!
+  final emailEditingController = TextEditingController(); // Theo dõi sự thay đổi giá trị ở trên thẻ Textfield
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+    //print('Run initState');
+  }
+  @override 
+  void dispose() {
+    super.dispose();
+    emailEditingController.dispose();
+    WidgetsBinding.instance.removeObserver(this);
+    //print('Run dispose');
+  }
+  // //When I know "the App is in background/foreground mode" ?
+  // @override
+  // void didChangeAppLifecycleState(AppLifecycleState state) {
+  //   // TODO: implement didChangeAppLifecycleState
+  //   super.didChangeAppLifecycleState(state);
+  //   if(state == AppLifecycleState.paused) {
+  //     print("App is in Background mode"); // chế độ khi app ko hoạt động, đang bị ẩn đi
+  //   } else if ( state == AppLifecycleState.resumed) {
+  //     print('App is in Foreground mode'); // Khi đang sử dụng app
+  //   }
+  // }
+  @override
+  Widget build(BuildContext context) {
+    // Hiển thị date hiện tại
+    DateTime now = new DateTime.now();
+    DateTime someDate = new DateTime(2023, 2,3);
+    return MaterialApp(
+      title: "This is statefulwidget",
+      home: Scaffold(
+        body: Center(
+          // child: Text(
+          //         'Name = ${widget.name}, Age = ${widget.age}',
+          //         style: TextStyle(fontSize: 40,
+          //                           color: Colors.green),
+          //           ),
+          child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                 children: <Widget>[
+                  // Container(
+                  //   //padding
+                  //   padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  //   child: TextField(
+                  //     controller: emailEditingController, // điều khiển việc khi mà gõ vào thì giá trị sẽ đc điền lên trên textfield
+                  //     onChanged: (text){
+                  //       this.setState(() { // Thay đổi giá trị của state tại đó
+                  //         _email = text; // gán trị email = giá trị mà chúng ta gõ vào
+                  //       });
+                  //     }, //Nội dung khi đc thay đổi sẽ nhảy vào đây
+                  //   decoration: InputDecoration( // Nhập thông tin
+                  //     border: OutlineInputBorder(
+                  //       borderRadius: const BorderRadius.all( //bỏ viền góc
+                  //         const Radius.circular(15)
+                  //       ),
+                  //     ),
+                  //     labelText: 'Enter your Email',
+                  //      // placeholder
+                  //   ),
+                  // ),
+                  // ),                
+                  // Text(
+                  //   // Mỗi khi thay đổi thì hàm build đc gọi lại và nhảy xuống đoạn lấy giá trị
+                  //   _email, // Hiện thông tin của state email
+                  //   style: TextStyle(fontSize: 40,
+                  //                    color: Colors.green),
+                  // ),
+                  Text(
+                    //someDate.toString(),
+                    //DateFormat('yyyy/MM/dd').format(now),
+                    style: TextStyle(fontSize: 40,
+                                     color: Colors.blueGrey),
+                  ),
+                 ],
+                    ),
+        ),
+      ),
+    ); 
+  }
+}
